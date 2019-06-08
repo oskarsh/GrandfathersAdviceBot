@@ -39,6 +39,14 @@ To speak with Grandfather [click here]( https://t.me/GrandfathersAdviceBot) and 
 
 
 
+Recommended Docker:
+
+`docker build -t grandfather-advice-bot . && docker run grandfather-advice-bot`
+
+
+
+Build yourself:
+
 ```bash
 git clone https://github.com/daehruoydeef/GrandfathersAdviceBot
 cd GrandfathersAdviceBot
@@ -46,7 +54,7 @@ pip3 install -r requirements.txt
 python3 main.py
 ```
 
-Note: This will not run by default you first need to get a Token by the Botfather himself. See [here](https://core.telegram.org/bots#3-how-do-i-create-a-bot). You need to edit 
+<!-- This will not run by default you first need to get a Token by the Botfather himself. See [here](https://core.telegram.org/bots#3-how-do-i-create-a-bot). You need to edit --> 
 
 
 
@@ -60,9 +68,7 @@ You feel like Advice is missing in the Database? Feel free to open up an Issue w
 
 ### Donation
 
-[![Generic badge](https://img.shields.io/badge/Donate via-Librapay-yellow.svg)](https://shields.io/)
-
-
+[![Generic badge](https://img.shields.io/badge/Donate via-Librapay-yellow.svg)](https://liberapay.com/daehruoydeef/)
 
 
 
