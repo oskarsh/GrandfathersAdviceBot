@@ -12,6 +12,7 @@
 
 import logging
 import json
+import os
 import random
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
@@ -52,22 +53,22 @@ def button(update, context):
         logger.info("sending Family and Friends Advice")
         advice=random.choice(life)
         logger.info(advice)
-        query.edit_message_text(text="\n \n "+ advice + " \n \n \n Get another /advice")
+        query.edit_message_text(text="Grandfather says to Family and Friends Advice \n \n "+ advice + " \n \n \n Get another /advice")
     elif data == "2":
         logger.info("sending Well Being and Health Advice")
         advice=random.choice(health)
         logger.info(advice)
-        query.edit_message_text(text="\n \n "+ advice + " \n \n \n Get another /advice")
+        query.edit_message_text(text="Grandfather says to Well Being and Health Advice \n \n "+ advice + " \n \n \n Get another /advice")
     elif data == "3":
         logger.info("sending Work and Carrer Advice")
         advice=random.choice(carrer)
         logger.info(advice)
-        query.edit_message_text(text="\n \n "+ advice + " \n \n \n Get another /advice")
+        query.edit_message_text(text="Grandfather says to Work and Carrer\n \n "+ advice + " \n \n \n Get another /advice")
     elif data == "4":
         logger.info("sending Family and Friends Advice")
         advice=random.choice(family)
         logger.info(advice)
-        query.edit_message_text(text="\n \n "+ advice + " \n \n \n Get another /advice")
+        query.edit_message_text(text="Grandfather says to Family and Friends Advice \n \n \n "+ advice + " \n \n \n Get another /advice")
 
 def help(update, context):
     update.message.reply_text("Use /advice to get some advice.")
