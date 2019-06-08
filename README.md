@@ -35,7 +35,7 @@ Click the Button to get some Advice from Grandfather:
 
 ## Install
 
-To speak with Grandfather [click here]( https://t.me/GrandfathersAdviceBot) and open a new Chat with him in Telegram
+To speak with Grandfather [click here]( https://t.me/GrandfathersAdviceBot) and open a new Chat with him in Telegram and use a Official Server
 
 
 
