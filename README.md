@@ -68,7 +68,7 @@ You feel like Advice is missing in the Database? Feel free to open up an Issue w
 
 ### Donation
 
-[https://img.shields.io/badge/Donate%20via-LibraPay-yellow.svg](https://liberapay.com/daehruoydeef/)
+[![](https://img.shields.io/badge/Donate%20via-LibraPay-yellow.svg)](https://liberapay.com/daehruoydeef/)
 
 
 
