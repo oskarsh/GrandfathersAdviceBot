@@ -10,6 +10,8 @@
 Basic example for a bot that uses inline keyboards.
 """
 import logging
+import requests
+import random
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
@@ -18,8 +20,12 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-#defining global notification TIME
-time = "14:00"
+
+# Ask the API to get the all the Data
+r = requests.get('https://my-json-server.typicode.com/daehruoydeef/GrandfathersAdviceBot/life')
+logger.info(r.json())
+life = r.json()
+
 
 def start(update, context):
     keyboard = [[InlineKeyboardButton("Life Advice", callback_data='1'),
@@ -32,15 +38,15 @@ def start(update, context):
     reply_markup = InlineKeyboardMarkup(keyboard)
     update.message.reply_text('Please choose Time:', reply_markup=reply_markup)
 
-def life_advice():
-    return 
-
 def button(update, context):
     query = update.callback_query
     data = query.data
     logger.info("data: " + str(data))
     if data == "1":
         logger.info("sending Family and Friends Advice")
+        advice=random.choice(life)
+        logger.info(advice)
+        query.edit_message_text(text=advice)
     elif data == "2":
         logger.info("sending Well Being and Health Advice")
     elif data == "3":
@@ -49,7 +55,7 @@ def button(update, context):
         logger.info("sending Family and Friends Advice")
 
     
-    query.edit_message_text(text="Selected option: {}".format(query.data))
+    # query.edit_message_text(text="Selected option: {}".format(query.data))
 
 
 def help(update, context):
@@ -62,6 +68,9 @@ def error(update, context):
 
 
 def main():
+
+
+
     # Create the Updater and pass it your bot's token.
     # Make sure to set use_context=True to use the new context based callbacks
     # Post version 12 this will no longer be necessary
