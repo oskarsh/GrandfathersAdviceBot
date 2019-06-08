@@ -1,14 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# This program is dedicated to the public domain under the CC0 license.
 #
-# THIS EXAMPLE HAS BEEN UPDATED TO WORK WITH THE BETA VERSION 12 OF PYTHON-TELEGRAM-BOT.
-# If you're still using version 11.1.0, please see the examples at
-# https://github.com/python-telegram-bot/python-telegram-bot/tree/v11.1.0/examples
+#
+# LICENSE: MIT
+# AUTHOR: daeh@tuta.io
+# TITLE: GrandfathersAdviceBot
+# DESCRIPTION: Grandfather will tell you Advice he learned throughout his Life. 
+# NOTES: t.me/GrandfathersAdviceBot
+#
+#
 
-"""
-Basic example for a bot that uses inline keyboards.
-"""
 import logging
 import json
 import random
@@ -81,7 +82,7 @@ def main():
     # Create the Updater and pass it your bot's token.
     # Make sure to set use_context=True to use the new context based callbacks
     # Post version 12 this will no longer be necessary
-    updater = Updater("", use_context=True)
+    updater = Updater("TOKEN", use_context=True)
 
     updater.dispatcher.add_handler(CommandHandler('start', start))
     updater.dispatcher.add_handler(CommandHandler('advice', advice))
