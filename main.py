@@ -50,10 +50,10 @@ def button(update, context):
     data = query.data
     logger.info("data: " + str(data))
     if data == "1":
-        logger.info("sending Family and Friends Advice")
+        logger.info("sending Life Advice")
         advice=random.choice(life)
         logger.info(advice)
-        query.edit_message_text(text="Grandfather says to Family and Friends Advice \n \n "+ advice + " \n \n \n Get another /advice")
+        query.edit_message_text(text="Grandfather says to Life Advice \n \n "+ advice + " \n \n \n Get another /advice")
     elif data == "2":
         logger.info("sending Well Being and Health Advice")
         advice=random.choice(health)
