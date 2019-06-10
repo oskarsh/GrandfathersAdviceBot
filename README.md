@@ -37,13 +37,17 @@ Click the Button to get some Advice from Grandfather:
 
 To speak with Grandfather [click here]( https://t.me/GrandfathersAdviceBot) and open a new Chat with him in Telegram and use a Official Server
 
-
+> This will not run by default you first need to get a Token by the Botfather himself. See [here](https://core.telegram.org/bots#3-how-do-i-create-a-bot). You need to edit
 
 Recommended Docker:
 
-`docker build -t grandfather-advice-bot . && docker run grandfather-advice-bot`
+```bash
+git clone https://github.com/daehruoydeef/GrandfathersAdviceBot
+cd GrandfathersAdviceBot
+docker build -t grandfather-advice-bot . && docker run grandfather-advice-bot
+```
 
-
+> You will need to append a sudo to each docker command
 
 Build yourself:
 
@@ -53,8 +57,7 @@ cd GrandfathersAdviceBot
 pip3 install -r requirements.txt
 python3 main.py
 ```
-
-<!-- This will not run by default you first need to get a Token by the Botfather himself. See [here](https://core.telegram.org/bots#3-how-do-i-create-a-bot). You need to edit --> 
+> This will not run by default you first need to get a Token by the Botfather himself. See [here](https://core.telegram.org/bots#3-how-do-i-create-a-bot). You need to edit
 
 
 
