@@ -33,17 +33,53 @@ with open('db.json') as json_file:
 
 def advice(update, context):
     keyboard = [[InlineKeyboardButton("Life Advice", callback_data='1'),
-                 InlineKeyboardButton("Well Being and Health ", callback_data='2'),
-                 InlineKeyboardButton("Work and Carrer", callback_data='3'),
-                 InlineKeyboardButton("Family and Friends", callback_data='4')
+                 InlineKeyboardButton("Health", callback_data='2'),
+                 InlineKeyboardButton("Work", callback_data='3'),
+                 InlineKeyboardButton("Friends", callback_data='4')
                  ],
 ]
-
     reply_markup = InlineKeyboardMarkup(keyboard)
     update.message.reply_text('Please choose Category:', reply_markup=reply_markup)
 
 def start(update, context):
     update.message.reply_text("Type /advice to get started")
+    update.message.reply_text("Type /help to get help")
+    update.message.reply_text("Type /life to get Life Advice")
+    update.message.reply_text("Type /health to get Well being and Health Advice")
+    update.message.reply_text("Type /work to get Work and Carrer Advice")
+    update.message.reply_text("Type /friends to get Family and Friends Advice")
+    update.message.reply_text("Type /donate to donate a penny for a coffee")
+
+
+def lifeadvice(update, context):
+    logger.info("sending Life Advice")
+    advice=random.choice(life)
+    logger.info(advice)
+    update.message.reply_text(text="Grandfather Life advice is: \n \n \n "+ advice + " \n \n \n Get another /advice \n \n Get another /life advice")
+
+
+def healthadvice(update, context):
+    logger.info("sending Well Being and Health Advice")
+    advice=random.choice(health)
+    logger.info(advice)
+    update.message.reply_text(text="Grandfather Well being and Health advice is: \n \n \n"+ advice + " \n \n \n Get another /advice \n \n Get another /health advice")
+
+
+def workadvice(update, context):
+    logger.info("sending Work and Carrer Advice")
+    advice=random.choice(carrer)
+    logger.info(advice)
+    update.message.reply_text(text="Grandfather Work and Carrer advice is: \n \n \n"+ advice + " \n \n \n Get another /advice \n \n Get another /work advice")
+
+
+
+def friendsadvice(update, context):
+    logger.info("sending Family and Friends Advice")
+    advice=random.choice(family)
+    logger.info(advice)
+    update.message.reply_text(text="Grandfather Family and Friends advice is: \n \n \n"+ advice + " \n \n \n Get another /advice \n \n Get another /friends advice")
+
+
 
 def button(update, context):
     query = update.callback_query
@@ -53,22 +89,22 @@ def button(update, context):
         logger.info("sending Life Advice")
         advice=random.choice(life)
         logger.info(advice)
-        query.edit_message_text(text="Grandfather says to Life Advice \n \n "+ advice + " \n \n \n Get another /advice")
+        query.edit_message_text(text="Grandfather Life advice is: \n \n \n"+ advice + " \n \n \n Get another /advice \n \n Get another /life advice")
     elif data == "2":
         logger.info("sending Well Being and Health Advice")
         advice=random.choice(health)
         logger.info(advice)
-        query.edit_message_text(text="Grandfather says to Well Being and Health Advice \n \n "+ advice + " \n \n \n Get another /advice")
+        query.edit_message_text(text="Grandfather Well being and Health advice is: \n \n \n"+ advice + " \n \n \n Get another /advice \n \n Get another /health advice")
     elif data == "3":
         logger.info("sending Work and Carrer Advice")
         advice=random.choice(carrer)
         logger.info(advice)
-        query.edit_message_text(text="Grandfather says to Work and Carrer\n \n "+ advice + " \n \n \n Get another /advice")
+        query.edit_message_text(text="Grandfather Work and Carrer advice is: \n \n \n"+ advice + " \n \n \n Get another /advice \n \n Get another /work advice")
     elif data == "4":
         logger.info("sending Family and Friends Advice")
         advice=random.choice(family)
         logger.info(advice)
-        query.edit_message_text(text="Grandfather says to Family and Friends Advice \n \n \n "+ advice + " \n \n \n Get another /advice")
+        query.edit_message_text(text="Grandfather Family and Friends advice is: \n \n \n"+ advice + " \n \n \n Get another /advice \n \n Get another /friends advice")
 
 def help(update, context):
     update.message.reply_text("Use /advice to get some advice.")
@@ -87,6 +123,10 @@ def main():
 
     updater.dispatcher.add_handler(CommandHandler('start', start))
     updater.dispatcher.add_handler(CommandHandler('advice', advice))
+    updater.dispatcher.add_handler(CommandHandler('life', lifeadvice))
+    updater.dispatcher.add_handler(CommandHandler('health', healthadvice))
+    updater.dispatcher.add_handler(CommandHandler('work', workadvice))
+    updater.dispatcher.add_handler(CommandHandler('friends', friendsadvice))
     updater.dispatcher.add_handler(CallbackQueryHandler(button))
     updater.dispatcher.add_handler(CommandHandler('help', help))
     updater.dispatcher.add_error_handler(error)
