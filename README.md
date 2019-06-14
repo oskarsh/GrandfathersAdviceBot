@@ -20,10 +20,6 @@ Click the Button to get some Advice from Grandfather:
 
 
 
-
-
-
-
 ## Features
 
 * Life Advice
@@ -31,7 +27,11 @@ Click the Button to get some Advice from Grandfather:
 * Work and Carrer Advice
 * Family and Friends Advice
 
+## Upcoming Features
 
+* /donate for the Project
+* /addAdvice to allow users to easily add Advice
+* Adding nicer Buttons
 
 ## Install
 
