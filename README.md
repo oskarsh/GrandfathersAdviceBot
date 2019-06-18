@@ -30,7 +30,7 @@ Click the Button to get some Advice from Grandfather:
 ## Upcoming Features
 
 * /donate for the Project
-* /addAdvice to allow users to easily add Advice
+* /addAdvice allows users to add Advice, the server will restart daily and fetch the new advices
 * Adding nicer Buttons
 
 ## Install
