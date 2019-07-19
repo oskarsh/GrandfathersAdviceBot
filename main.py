@@ -95,6 +95,10 @@ def addAdvice(update, context):
     update.message.reply_text(text="You can now tell me what you learned as a life lesson", reply_markup=markup)
     return CHOOSING
 
+def donate(update, context):
+    update.message.reply_text(text="If you like my Grandson´s work consider helping him out by donating a small dime \n \n https://liberapay.com/daehruoydeef")
+
+
 def button(update, context):
     query = update.callback_query
     data = query.data
@@ -211,6 +215,7 @@ def main():
     logger.info("TOKEN SET")
     updater.dispatcher.add_handler(CommandHandler('start', start))
     updater.dispatcher.add_handler(CommandHandler('advice', advice))
+    updater.dispatcher.add_handler(CommandHandler('donate', donate))
     updater.dispatcher.add_handler(CommandHandler('life', lifeadvice))
     updater.dispatcher.add_handler(CommandHandler('health', healthadvice))
     updater.dispatcher.add_handler(CommandHandler('work', workadvice))
