@@ -223,7 +223,7 @@ def main():
 
     # Add conversation handler with the states CHOOSING, TYPING_CHOICE and TYPING_REPLY
     conv_handler = ConversationHandler(
-        entry_points=[CommandHandler('addAdvice', addAdvice)],
+        entry_points=[CommandHandler('add', addAdvice)],
 
         states={
             CHOOSING: [RegexHandler('^(Life|Work|Health|Friends)$',
