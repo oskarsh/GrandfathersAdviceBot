@@ -49,6 +49,7 @@ def advice(update, context):
 
 def start(update, context):
     update.message.reply_text("Type /advice to get started")
+    update.message.reply_text("Type /add to add your own advice")
     update.message.reply_text("Type /help to get help")
     update.message.reply_text("Type /life to get Life Advice")
     update.message.reply_text("Type /health to get Well being and Health Advice")
@@ -200,7 +201,14 @@ def done(update, context):
     return ConversationHandler.END
 
 def help(update, context):
-    update.message.reply_text("Use /advice to get some advice.")
+    update.message.reply_text("Type /advice to get started")
+    update.message.reply_text("Type /add to add your own advice")
+    update.message.reply_text("Type /help to get help")
+    update.message.reply_text("Type /life to get Life Advice")
+    update.message.reply_text("Type /health to get Well being and Health Advice")
+    update.message.reply_text("Type /work to get Work and Carrer Advice")
+    update.message.reply_text("Type /friends to get Family and Friends Advice")
+    update.message.reply_text("Type /donate to donate a penny for a coffee")
 
 def error(update, context):
     """Log Errors caused by Updates."""
