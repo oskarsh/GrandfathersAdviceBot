@@ -27,12 +27,6 @@
 * Work and Carrer Advice
 * Family and Friends Advice
 
-## Upcoming Features
-
-* /donate for the Project
-* /addAdvice allows users to add Advice, the server will restart daily and fetch the new advices
-* Adding nicer Buttons
-
 ## Install
 
 To speak with Grandfather [click here]( https://t.me/GrandfathersAdviceBot) and open a new Chat with him in Telegram and use a Official Server
